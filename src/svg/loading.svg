@@ -1,0 +1,204 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFE66D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4ECDC4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="20" fill="#1a1a2e"/>
+
+  <!-- Decorative dots -->
+  <circle cx="20" cy="20" r="4" fill="#FF6B6B" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="20" r="4" fill="#4ECDC4" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="20" cy="180" r="4" fill="#FFE66D" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="180" cy="180" r="4" fill="#A855F7" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Track circle (background ring) -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="#ffffff18" stroke-width="10"/>
+
+  <!-- Progress circle -->
+  <!-- circumference of r=70 is ~439.82 -->
+  <circle cx="100" cy="100" r="70"
+    fill="none"
+    stroke="url(#grad1)"
+    stroke-width="10"
+    stroke-linecap="round"
+    stroke-dasharray="439.82"
+    stroke-dashoffset="439.82"
+    transform="rotate(-90 100 100)"
+    filter="url(#glow)">
+    <animate attributeName="stroke-dashoffset"
+      from="439.82" to="0"
+      dur="3s"
+      fill="freeze"
+      calcMode="easeIn"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Spinning decorative ring -->
+  <circle cx="100" cy="100" r="82"
+    fill="none"
+    stroke="#ffffff08"
+    stroke-width="2"
+    stroke-dasharray="10 6"/>
+  <circle cx="100" cy="100" r="82"
+    fill="none"
+    stroke="url(#grad2)"
+    stroke-width="2"
+    stroke-dasharray="30 490"
+    stroke-linecap="round">
+    <animateTransform attributeName="transform"
+      type="rotate"
+      from="0 100 100"
+      to="360 100 100"
+      dur="2s"
+      repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Center background -->
+  <circle cx="100" cy="100" r="55" fill="#16213e"/>
+
+
+
+  <!-- Fake counter using multiple text elements with visibility animation -->
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0s"/>
+    <set attributeName="visibility" to="hidden" begin="0.15s"/>
+    0%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.15s"/>
+    <set attributeName="visibility" to="hidden" begin="0.3s"/>
+    5%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.3s"/>
+    <set attributeName="visibility" to="hidden" begin="0.45s"/>
+    10%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.45s"/>
+    <set attributeName="visibility" to="hidden" begin="0.6s"/>
+    15%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.6s"/>
+    <set attributeName="visibility" to="hidden" begin="0.75s"/>
+    20%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.75s"/>
+    <set attributeName="visibility" to="hidden" begin="0.9s"/>
+    25%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="0.9s"/>
+    <set attributeName="visibility" to="hidden" begin="1.05s"/>
+    30%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.05s"/>
+    <set attributeName="visibility" to="hidden" begin="1.2s"/>
+    35%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.2s"/>
+    <set attributeName="visibility" to="hidden" begin="1.35s"/>
+    40%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.35s"/>
+    <set attributeName="visibility" to="hidden" begin="1.5s"/>
+    45%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.5s"/>
+    <set attributeName="visibility" to="hidden" begin="1.65s"/>
+    50%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.65s"/>
+    <set attributeName="visibility" to="hidden" begin="1.8s"/>
+    55%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.8s"/>
+    <set attributeName="visibility" to="hidden" begin="1.95s"/>
+    60%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="1.95s"/>
+    <set attributeName="visibility" to="hidden" begin="2.1s"/>
+    65%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.1s"/>
+    <set attributeName="visibility" to="hidden" begin="2.25s"/>
+    70%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.25s"/>
+    <set attributeName="visibility" to="hidden" begin="2.4s"/>
+    75%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.4s"/>
+    <set attributeName="visibility" to="hidden" begin="2.55s"/>
+    80%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.55s"/>
+    <set attributeName="visibility" to="hidden" begin="2.7s"/>
+    85%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.7s"/>
+    <set attributeName="visibility" to="hidden" begin="2.85s"/>
+    90%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="url(#grad1)" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="2.85s"/>
+    <set attributeName="visibility" to="hidden" begin="3s"/>
+    95%
+  </text>
+  <text x="100" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="#FFE66D" visibility="hidden">
+    <set attributeName="visibility" to="visible" begin="3s"/>
+    100%
+  </text>
+
+  <!-- Loading label -->
+  <text x="100" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#aaaacc" letter-spacing="3">LOADING</text>
+
+  <!-- Bounce dots -->
+  <circle cx="82" cy="130" r="4" fill="#FF6B6B">
+    <animate attributeName="cy" values="130;124;130" dur="0.6s" begin="0s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="130" r="4" fill="#FFE66D">
+    <animate attributeName="cy" values="130;124;130" dur="0.6s" begin="0.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="118" cy="130" r="4" fill="#4ECDC4">
+    <animate attributeName="cy" values="130;124;130" dur="0.6s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+</svg>
